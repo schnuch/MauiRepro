@@ -1,24 +1,24 @@
 ﻿namespace MauiRepro;
 
-public partial class MainPage : ContentPage
-{
-	int count = 0;
-
-	public MainPage()
-	{
+public partial class MainPage : ContentPage {
+	public MainPage() {
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+	private void Enable_Clicked(object sender, EventArgs e) {
+		TestBtn.IsEnabled = true;
+	}
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+	private void Disable_Clicked(object sender, EventArgs e) {
+		TestBtn.IsEnabled = false;
+	}
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
+	private void Enable_TextChanged(object sender, TextChangedEventArgs e) {
+		TestBtn.IsEnabled = true;
+	}
+
+	private void Disable_TextChanged(object sender, TextChangedEventArgs e) {
+		TestBtn.IsEnabled = false;
 	}
 }
 
